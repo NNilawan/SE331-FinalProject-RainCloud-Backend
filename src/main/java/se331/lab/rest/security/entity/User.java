@@ -7,9 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import se331.lab.rest.entity.Organizer;
+import se331.lab.rest.entity.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,9 +46,21 @@ public class User {
     @NotNull
     private String lastname;
 
-    @Column(name = "EMAIL", length = 50)
+    @Column(name = "BIRTHDATE", length = 50)
     @NotNull
-    private String email;
+    private LocalDate birthDate;
+
+    @Column(name = "HOMETOWN", length = 150)
+    @NotNull
+    private String hometown;
+
+    @Column(name = "PICTURE", length = 150)
+    @NotNull
+    private String picture;
+
+//    @Column(name = "EMAIL", length = 50)
+//    @NotNull
+//    private String email;
 
     @Column(name = "ENABLED")
     @NotNull
@@ -58,10 +71,26 @@ public class User {
     @NotNull
     private Date lastPasswordResetDate;
 
-	@Builder.Default
+    @Builder.Default
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Authority> authorities = new ArrayList<>();
-    @OneToOne
-    Organizer organizer;
 
+    @OneToMany(mappedBy = "doctor")
+    @Builder.Default
+    List<UserVaccine> giveVaccine = new ArrayList<>();
+
+    @OneToMany(mappedBy = "patient")
+    @Builder.Default
+    List<UserVaccine> gotVaccine = new ArrayList<>();
+
+//    @ManyToMany
+//    List<Vaccine> vaccineHistory;
+
+    @OneToMany(mappedBy = "commentBy")
+    @Builder.Default
+    List<Comment> giveComment = new ArrayList<>();
+
+    @OneToMany(mappedBy = "commentTo")
+    @Builder.Default
+    List<Comment> gotComment = new ArrayList<>();
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -17,7 +18,10 @@ public class JwtUser implements UserDetails {
     private final String firstname;
     private final String lastname;
     private final String password;
-    private final String email;
+    private final LocalDate birthDate;
+    private final String hometown;
+    private final String picture;
+    //    private final String email;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
     private final Date lastPasswordResetDate;
@@ -27,7 +31,10 @@ public class JwtUser implements UserDetails {
             String username,
             String firstname,
             String lastname,
-            String email,
+            LocalDate birthDate,
+            String hometown,
+            String picture,
+//            String email,
             String password, Collection<? extends GrantedAuthority> authorities,
             boolean enabled,
             Date lastPasswordResetDate
@@ -36,7 +43,10 @@ public class JwtUser implements UserDetails {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.email = email;
+        this.birthDate = birthDate;
+        this.hometown = hometown;
+        this.picture = picture;
+//        this.email = email;
         this.password = password;
         this.authorities = authorities;
         this.enabled = enabled;
@@ -79,9 +89,21 @@ public class JwtUser implements UserDetails {
         return lastname;
     }
 
-    public String getEmail() {
-        return email;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
+
+    public String getHometown() {
+        return hometown;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+//    public String getEmail() {
+//        return email;
+//    }
 
     @JsonIgnore
     @Override
