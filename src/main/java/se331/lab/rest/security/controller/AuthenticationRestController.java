@@ -73,9 +73,9 @@ public class AuthenticationRestController {
         Map result = new HashMap();
         result.put("token", token);
                 User user = userRepository.findById(((JwtUser) userDetails).getId()).orElse(null);
-                if (user.getOrganizer() != null) {
-                        result.put("user", LabMapper.INSTANCE.getOrganizerAuthDTO( user.getOrganizer()));
-                    }
+//                if (user.getOrganizer() != null) {
+//                        result.put("user", LabMapper.INSTANCE.getOrganizerAuthDTO( user.getOrganizer()));
+//                    }
 
         return ResponseEntity.ok(result);
     }
@@ -102,13 +102,13 @@ public class AuthenticationRestController {
         authorityRepository.save(authUser);
         Organizer organizer = organizerRepository.save(Organizer.builder().name("Newbie").build());
         organizer.setUser(user);
-        user.setOrganizer(organizer);
+//        user.setOrganizer(organizer);
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
         User output = userRepository.save(user);
         Map result = new HashMap();
         result.put("user", LabMapper.INSTANCE.getRegisterDto(output));
-        result.put("Organizer", LabMapper.INSTANCE.getOrganizerAuthDTO(user.getOrganizer()));
+//        result.put("Organizer", LabMapper.INSTANCE.getOrganizerAuthDTO(user.getOrganizer()));
         user.getAuthorities().add(authUser);
         return ResponseEntity.ok(result);
     }
