@@ -21,7 +21,7 @@ public class UserVaccineController {
     @Autowired
     UserVaccineService userVaccineService;
 
-    @GetMapping("user")
+    @GetMapping("admin")
     public ResponseEntity<?> getEventLists(@RequestParam(value = "_limit", required = false) Integer perPage
             , @RequestParam(value = "_page", required = false) Integer page, @RequestParam(value = "title", required = false) String title) {
         perPage = perPage == null ? 3 : perPage;
@@ -35,7 +35,5 @@ public class UserVaccineController {
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.set("x-total-count", String.valueOf(pageOutput.getTotalElements()));
         return new ResponseEntity<>(LabMapper.INSTANCE.getUserVaccineDto(pageOutput.getContent()), responseHeader, HttpStatus.OK);
-
     }
-
 }
