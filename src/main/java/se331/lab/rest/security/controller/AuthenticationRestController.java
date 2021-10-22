@@ -27,6 +27,9 @@ import se331.lab.rest.security.repository.UserRepository;
 import se331.lab.rest.util.LabMapper;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,7 +75,8 @@ public class AuthenticationRestController {
         final String token = jwtTokenUtil.generateToken(userDetails, device);
         Map result = new HashMap();
         result.put("token", token);
-                User user = userRepository.findById(((JwtUser) userDetails).getId()).orElse(null);
+        User user = userRepository.findById(((JwtUser) userDetails).getId()).orElse(null);
+        result.put("user", LabMapper.INSTANCE.getUserAuthDTO(user));
 //                if (user.getOrganizer() != null) {
 //                        result.put("user", LabMapper.INSTANCE.getOrganizerAuthDTO( user.getOrganizer()));
 //                    }
@@ -100,16 +104,17 @@ public class AuthenticationRestController {
         Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         authorityRepository.save(authUser);
-        Organizer organizer = organizerRepository.save(Organizer.builder().name("Newbie").build());
-        organizer.setUser(user);
+//        Organizer organizer = organizerRepository.save(Organizer.builder().name("Newbie").build());
+//        organizer.setUser(user);
 //        user.setOrganizer(organizer);
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
+        user.setLastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        user.getAuthorities().add(authUser);
         User output = userRepository.save(user);
         Map result = new HashMap();
         result.put("user", LabMapper.INSTANCE.getRegisterDto(output));
 //        result.put("Organizer", LabMapper.INSTANCE.getOrganizerAuthDTO(user.getOrganizer()));
-        user.getAuthorities().add(authUser);
         return ResponseEntity.ok(result);
     }
 }
