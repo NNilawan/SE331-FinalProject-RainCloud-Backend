@@ -5,12 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VaccineDTO {
+public class UserDataDTO {
     Long id;
-    String name;
+    String username;
+    String firstname;
+    String lastname;
+    LocalDate birthDate;
+    String hometown;
     String picture;
 }

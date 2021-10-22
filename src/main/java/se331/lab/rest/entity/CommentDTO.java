@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import se331.lab.rest.security.entity.User;
 
 import java.sql.Time;
 import java.time.LocalDate;
@@ -13,16 +12,13 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserVaccineDTO {
+public class CommentDTO {
     Long id;
     LocalDate date;
     Time time;
-    String place;
-    Integer dose;
+    String comment;
 
-    VaccineDTO vaccine;
+    UserDataDTO commentBy;
 
-    UserDataDTO doctor;
-
-    UserDataDTO patient;
+    UserDataDTO commentTo;
 }

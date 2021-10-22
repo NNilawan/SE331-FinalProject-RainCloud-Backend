@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "se331-finalproject-uploadimage",
+  "private_key_id": "33776137ba94192d3d2a53f0d62df81f252b5da9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC8o3kRxffQRQeQ\nNCnOGa1s3bDOzFUCgqJuVQZaPLR0UpIiCUCAvD87e/KkA3/C0bzv9QiMn9Ot7i2P\nVKmg9ixkKj9FLPYUmbK7vdC7RzJ24DSMhQ2nXVze2USf9GyvTXoEzzHnn3uEJnWB\nw6QbrBLl0TiLKGH3eVAaFWS9fPILy7TQYsaynSZsMsnYrlxFbOgz9sg5qgcnobvF\ncdP1SjemB0NlqiVQtJWXFUqbgcQjEBrITwvUyRMPUHiYborzSveiM/knSt8Gnl1X\nBs53N8143VXY8Bt5dro2/K+T6cXVUz2zxYvK2G7BLCCTEZ9fi6AuM6XQHyxpZ7mI\nZtrhV3WhAgMBAAECggEAShz+Aa4idXjRhmYAMMHk4btd7nnYQnK5x5hvNP/ZtEQG\ntwmkho+vVjsV8zuOtCe8UBiY4csfmxvTWZddR+jAOyBgGFkYW7KhRuLGQfYwjQT8\nkGLsIN/tD38UV7XsB5nsgTw4crS1jg+gJjoL3XVnPVTMntvgVZ8bigvytwIChQA3\naQtv88MHQtvuh4OM82taasKjYG2wbIfmmM+VgB85K+8I7l5VL+P/5/2bNK1Gy0zB\nnvk8cDphQKIrspCJzS9p10EfgjoCir4oX4qoJBryrm7RVIHEam9nDwI1rOvJigxt\nqtGzLwFGDQfy63rgEiwt5znH3hPl3R6WNQD2mvyAmwKBgQD3UJJpXnuE/KJP6ukj\nTmmpfmD5rF857FHZ7xIFQtdtmR0Z8Bmz9KrMGFtdcAp63AUKJ49hLk3enZf0nsy/\n9hyyHNV/m92KXMVuo+MVYzlNExvkq7rsWpaf1BuWfcs2OohNvqBbrXzWtTmGYh7h\nEKSiSDUyDeKZKY/XFdBDY9k+4wKBgQDDQ2LPYpFcvEXAOLmM8rHWvH6a5VnJRwVX\n4WsakJ4OKzJsk2xi68mZ+IZNzm+PtAaJeYC2cTjXC746pKXKg7aUoqeO5vnQKNlD\nq30Wdrm80XS1prErrbVrtJZvK7Wij7PPMLDxNmcmvaqwoHQVJiQpRI24Xf7VfCiu\nvyHtatH8qwKBgQDOXtZ9xJCvzRwoMe6vPnxfKg0D6nlf3ToD8EGKUFdxpgWpojfg\neXaYbm63DopAMR6ndZFoV3o1HC4zuttCB720RulE3axFC9rX0zvnme+zyBFLhJ2r\nIoB0CEupDXkn3DnnHf2z4pW8mGbTI0d/KSMoI7b3+KwwgIT9xr8NrOEYXwKBgFEp\nrGO5e+SJGZEZwv60TnmMpi9qT9TbIXxy5VsIa7pF+FKrQK0phwXqCKFEwph/4wu3\npmmvTEoOxoaHs6Ym83h6150Nox8EK7L2ECuLNA8pHRL4c8JNFRDs4m7ZQ0mL49im\nS5Yn3955jf6W40l7LiK9LQ9KesdwMVTZe5e9BAW7AoGBALz1S/m26whG7EGFL586\nkBdhGrZQVsbBC1Y8r/uaGV77xqt6lfnmwmD1o5GhpdPBmoaqN9wdIN2fZfOT5yEW\nOfRJxTcY7fdbCAaPJEr6RPh00XEhN3SvrtNQwHYeyR+A6F15i0tCKF8LWvbWEATu\nIhkS0Ra+2GDklEn4qJwVAioD\n-----END PRIVATE KEY-----\n",
+  "client_email": "se331-finalproject-uploadimage@appspot.gserviceaccount.com",
+  "client_id": "109698345366488584286",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/se331-finalproject-uploadimage%40appspot.gserviceaccount.com"
+}
