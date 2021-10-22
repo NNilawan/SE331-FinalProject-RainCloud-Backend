@@ -24,4 +24,7 @@ public interface LabMapper {
     OrganizerAuthDTO getOrganizerAuthDTO(Organizer organizer);
 
     AuthorityDTO getRegisterDto(User user);
+
+    UserVaccineDTO getUserVaccineDto(UserVaccine userVaccine);
+    List<UserVaccineDTO> getUserVaccineDto(List<UserVaccine> userVaccines);
 }
