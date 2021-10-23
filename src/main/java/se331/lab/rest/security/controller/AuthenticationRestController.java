@@ -3,6 +3,7 @@ package se331.lab.rest.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -101,20 +102,24 @@ public class AuthenticationRestController {
 
     @PostMapping("${jwt.route.authentication.path}/registers")
     public ResponseEntity<?> addUser(@RequestBody User user) throws AuthenticationException {
-        Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
-        authorityRepository.save(authUser);
+        if (userRepository.findByUsername(user.getUsername()) == null ) {
+            Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
+            PasswordEncoder encoder = new BCryptPasswordEncoder();
+            authorityRepository.save(authUser);
 //        Organizer organizer = organizerRepository.save(Organizer.builder().name("Newbie").build());
 //        organizer.setUser(user);
 //        user.setOrganizer(organizer);
-        user.setEnabled(true);
-        user.setPassword(encoder.encode(user.getPassword()));
-        user.setLastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        user.getAuthorities().add(authUser);
-        User output = userRepository.save(user);
-        Map result = new HashMap();
-        result.put("user", LabMapper.INSTANCE.getRegisterDto(output));
+            user.setEnabled(true);
+            user.setPassword(encoder.encode(user.getPassword()));
+            user.setLastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            user.getAuthorities().add(authUser);
+            User output = userRepository.save(user);
+            Map result = new HashMap();
+            result.put("user", LabMapper.INSTANCE.getRegisterDto(output));
 //        result.put("Organizer", LabMapper.INSTANCE.getOrganizerAuthDTO(user.getOrganizer()));
-        return ResponseEntity.ok(result);
+            return ResponseEntity.ok(result);
+        }else {
+            return (ResponseEntity<?>) ResponseEntity.status(HttpStatus.BAD_GATEWAY);
+        }
     }
 }
