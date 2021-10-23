@@ -25,4 +25,10 @@ public class VaccineServiceImpl implements  VaccineService{
     public Page<Vaccine> getVaccine(Integer page, Integer pageSize) {
         return vaccineDao.getVaccine(PageRequest.of(page,pageSize));
     }
+
+    @Override
+    public Vaccine getVaccine(Long id) {
+        return vaccineDao.getVaccine(id);
+    }
+
 }

@@ -17,6 +17,7 @@ import se331.lab.rest.security.JwtTokenUtil;
 import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.UserRepository;
 import se331.lab.rest.service.UserService;
+import se331.lab.rest.service.VaccineService;
 import se331.lab.rest.util.LabMapper;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,12 +36,13 @@ public class UserController {
     UserService userService;
 
     @Autowired
-    VaccineDao vaccineDao;
-    @Autowired
     UserRepository userRepository;
 
     @Autowired
     VaccineRepository vaccineRepository;
+
+    @Autowired
+    VaccineService vaccineService;
 
     @GetMapping("datas/{id}")
     public ResponseEntity<?> getUser(@PathVariable("id") Long id) {
@@ -70,17 +72,7 @@ public class UserController {
 
     @PostMapping("/admin/{id}")
     public ResponseEntity<?> addVaccinetoUser(HttpServletRequest request, @RequestBody UserVaccine userVaccine, @PathVariable("id") Long id) {
-        String authToken = request.getHeader(this.tokenHeader);
-        if (authToken != null && authToken.startsWith("Bearer ")) {
-            authToken = authToken.substring(7);
-        }
-        String username = jwtTokenUtil.getUsernameFromToken(authToken);
-        User doctor = userRepository.findByUsername(username);
         User patient = userService.getUser(id);
-        Long vaccineID = userVaccine.getVaccine().getId();
-        Vaccine vaccine = vaccineRepository.findById(vaccineID).orElse(null);
-        userVaccine.setVaccine(vaccine);
-        userVaccine.setDoctor(doctor);
         userVaccine.setPatient(patient);
 
         UserVaccine output = userService.save(userVaccine);
