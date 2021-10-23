@@ -5,6 +5,5 @@ import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.security.entity.User;
 
 public interface VaccineRepository extends JpaRepository<Vaccine,Long> {
-
     Vaccine findById(Integer id);
 }
