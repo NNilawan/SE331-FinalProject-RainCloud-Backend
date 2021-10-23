@@ -31,6 +31,7 @@ public interface LabMapper {
     UserAuthDTO getUserAuthDTO(User user);
 
     UserDetailDTO getUserDetailDTO(User user);
+    List<UserDetailDTO> getUserDetailDTO(List<User> users);
 
     CommentDTO getCommentDTO(Comment comment);
 //    AuthorityDTO getRegisterDto(User user);
