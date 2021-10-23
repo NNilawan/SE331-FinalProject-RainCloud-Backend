@@ -13,4 +13,10 @@ public interface UserService {
 
     UserVaccine save(UserVaccine userVaccine);
     Page<UserVaccine> getUserVaccines(String title, Pageable pageable);
+
+    Page<User> getUsersForDoctor(Long id, Pageable pageable);
+    Page<User> getUsersForDoctor(Long id, String title, Pageable pageable);
+
+    Page<User> getUsers(Integer pageSize, Integer page);
+    Page<User> getUsers(String title, Pageable pageable);
 }
