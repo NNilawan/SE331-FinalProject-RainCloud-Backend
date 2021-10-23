@@ -12,4 +12,5 @@ public interface UserVaccineDao {
 
     UserVaccine save(UserVaccine userVaccine);
     Page<UserVaccine> getUserVaccine(String name, Pageable page);
+
 }

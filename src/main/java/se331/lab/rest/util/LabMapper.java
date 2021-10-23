@@ -33,7 +33,7 @@ public interface LabMapper {
     UserDetailDTO getUserDetailDTO(User user);
 
     CommentDTO getCommentDTO(Comment comment);
-    AuthorityDTO getRegisterDto(User user);
+//    AuthorityDTO getRegisterDto(User user);
 
     UserVaccineDTO getUserVaccineDto(UserVaccine userVaccine);
     List<UserVaccineDTO> getUserVaccineDto(List<UserVaccine> userVaccines);

@@ -54,7 +54,5 @@ public class EventController {
     public ResponseEntity<?> addEvent(@RequestBody Event event) {
         Event output = eventService.save(event);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
-
-
     }
 }

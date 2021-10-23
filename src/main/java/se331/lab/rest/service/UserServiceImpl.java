@@ -11,6 +11,8 @@ import se331.lab.rest.entity.UserVaccine;
 import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.security.entity.User;
 
+import javax.transaction.Transactional;
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -38,10 +40,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @Transactional
     public UserVaccine save(UserVaccine userVaccine) {
-        Vaccine vaccine = vaccineDao.findById(userVaccine.getVaccine().getId()).orElse(null);
-        userVaccine.setVaccine(vaccine);
-        vaccine.getVaccineHistory().add(userVaccine);
         return userVaccineDao.save(userVaccine);
     }
 
