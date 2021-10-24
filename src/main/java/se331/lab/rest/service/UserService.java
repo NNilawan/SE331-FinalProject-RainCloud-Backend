@@ -10,7 +10,8 @@ import java.util.List;
 
 public interface UserService {
     User getUser(Long id);
-    List<UserVaccine> getAllUserVaccine();
+    List<User> getAllUserVaccine();
+//    List<UserVaccine> getAllUserVaccine();
     Page<UserVaccine> getUserVaccines(Integer pageSize, Integer page);
     UserVaccine getUserVaccine(Long id);
 

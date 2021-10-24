@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService{
         return userVaccineDao.getUserVaccine(id);
     }
     @Override
-    public List<UserVaccine> getAllUserVaccine() {
-        return userVaccineDao.getUserVaccine(Pageable.unpaged()).getContent();
+    public List<User> getAllUserVaccine() {
+        return userDao.getUser(Pageable.unpaged()).getContent();
     }
 
     @Override
