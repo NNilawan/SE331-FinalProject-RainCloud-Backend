@@ -14,7 +14,7 @@ public interface UserService {
 //    List<UserVaccine> getAllUserVaccine();
     Page<UserVaccine> getUserVaccines(Integer pageSize, Integer page);
     UserVaccine getUserVaccine(Long id);
-
+Page<User> getDoctor(Long id);
     UserVaccine save(UserVaccine userVaccine);
     Page<UserVaccine> getUserVaccines(String title, Pageable pageable);
 }

@@ -40,6 +40,12 @@ public class UserServiceImpl implements UserService{
     public UserVaccine getUserVaccine(Long id) {
         return userVaccineDao.getUserVaccine(id);
     }
+
+    @Override
+    public Page<User> getDoctor(Long id) {
+        return userDao.getDoctor(id);
+    }
+
     @Override
     public List<User> getAllUserVaccine() {
         return userDao.getUser(Pageable.unpaged()).getContent();

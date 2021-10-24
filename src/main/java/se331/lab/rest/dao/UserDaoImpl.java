@@ -22,4 +22,9 @@ public class UserDaoImpl implements UserDao{
         return userRepository.findAll(pageRequest);
     }
 
+    @Override
+    public Page<User> getDoctor(Long id) {
+        return userRepository.findByAuthorities_id(id);
+    }
+
 }
