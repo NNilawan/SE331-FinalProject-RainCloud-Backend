@@ -55,8 +55,9 @@ public class UserController {
     }
 
     @GetMapping("admin")
-    public ResponseEntity<?> getEventLists() {
-            return ResponseEntity.ok(LabMapper.INSTANCE.getUserVaccineDto(userService.getAllUserVaccine()));
+    public ResponseEntity<?> getUserLists() {
+
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(userService.getAllUserVaccine()));
     }
 
     @PostMapping("/admin/{id}")
