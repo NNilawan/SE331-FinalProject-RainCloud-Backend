@@ -32,6 +32,11 @@ public class UserVaccineDaoImpl implements UserVaccineDao{
     }
 
     @Override
+    public Page<UserVaccine> getUserVaccine(Pageable pageRequest) {
+        return userVaccineRepository.findAll(pageRequest);
+    }
+
+    @Override
     public UserVaccine save(UserVaccine userVaccine) {
         return userVaccineRepository.save(userVaccine);
     }
