@@ -14,6 +14,7 @@ import se331.lab.rest.dao.VaccineDao;
 import se331.lab.rest.entity.*;
 import se331.lab.rest.repository.VaccineRepository;
 import se331.lab.rest.security.JwtTokenUtil;
+import se331.lab.rest.security.entity.AuthorityName;
 import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.UserRepository;
 import se331.lab.rest.service.UserService;
@@ -56,16 +57,32 @@ public class UserController {
 
     @GetMapping("admin")
     public ResponseEntity<?> getUserLists() {
-
             return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(userService.getAllUserVaccine()));
     }
 
-    @PostMapping("/admin/{id}")
+    @GetMapping("/admin/{id}")
+    public ResponseEntity<?> getUserDetails(@PathVariable("id") Long id) {
+        User output = userService.getUser(id);
+        if (output != null) {
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(output));
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The given id is not found");
+        }
+    }
+
+    @PostMapping("/admin")
     public ResponseEntity<?> addVaccinetoUser(HttpServletRequest request, @RequestBody UserVaccine userVaccine, @PathVariable("id") Long id) {
         User patient = userService.getUser(id);
         userVaccine.setPatient(patient);
-
         UserVaccine output = userService.save(userVaccine);
         return ResponseEntity.ok(LabMapper.INSTANCE.getUserVaccineDto(output));
+    }
+
+    @GetMapping("/doctor")
+    public ResponseEntity<?> getDoctor() {
+        int i = 2;
+        Long l = Long.valueOf(i);
+        User doctor = userService.getDoctor(l);
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(doctor));
     }
 }
