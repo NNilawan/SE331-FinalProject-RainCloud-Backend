@@ -54,7 +54,7 @@ public class User {
     @NotNull
     private String hometown;
 
-    @Column(name = "PICTURE", length = 150)
+    @Column(name = "PICTURE", length = 500)
     @NotNull
     private String picture;
 
