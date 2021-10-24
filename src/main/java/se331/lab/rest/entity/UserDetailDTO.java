@@ -18,7 +18,7 @@ public class UserDetailDTO {
     String username;
     String firstname;
     String lastname;
-    LocalDate birthDate;
+    String birthDate;
     String hometown;
     String picture;
     List<UserVaccineDTO> giveVaccine = new ArrayList<>();

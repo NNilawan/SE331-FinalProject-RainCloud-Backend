@@ -48,7 +48,7 @@ public class User {
 
     @Column(name = "BIRTHDATE", length = 50)
     @NotNull
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Column(name = "HOMETOWN", length = 150)
     @NotNull
