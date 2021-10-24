@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 import se331.lab.rest.dao.UserDao;
 import se331.lab.rest.dao.UserVaccineDao;
 import se331.lab.rest.dao.VaccineDao;
+import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.entity.UserVaccine;
 import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.security.entity.User;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -37,6 +39,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserVaccine getUserVaccine(Long id) {
         return userVaccineDao.getUserVaccine(id);
+    }
+    @Override
+    public List<UserVaccine> getAllUserVaccine() {
+        return userVaccineDao.getUserVaccine(Pageable.unpaged()).getContent();
     }
 
     @Override
