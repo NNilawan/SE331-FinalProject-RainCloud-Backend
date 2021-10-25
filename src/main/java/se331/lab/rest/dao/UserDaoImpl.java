@@ -21,6 +21,11 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
+    public User updateRole(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
     public Page<User> getUsersForDoctor(Long id, Pageable page) {
         return userRepository.findByGotVaccine_doctorId(id, page);
     }
@@ -39,6 +44,9 @@ public class UserDaoImpl implements UserDao{
     public Page<User> getUsers(String name, Pageable page) {
         return userRepository.findByFirstnameIgnoreCaseContainingOrLastnameIgnoreCaseContaining(name,name,page);
     }
+
+
+
     public Page<User> getUser(Pageable pageRequest) {
         return userRepository.findAll(pageRequest);
     }

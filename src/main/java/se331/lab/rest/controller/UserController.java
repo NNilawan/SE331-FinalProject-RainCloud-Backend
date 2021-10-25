@@ -14,6 +14,7 @@ import se331.lab.rest.dao.VaccineDao;
 import se331.lab.rest.entity.*;
 import se331.lab.rest.repository.VaccineRepository;
 import se331.lab.rest.security.JwtTokenUtil;
+import se331.lab.rest.security.entity.Authority;
 import se331.lab.rest.security.entity.AuthorityName;
 import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.UserRepository;
@@ -24,6 +25,7 @@ import se331.lab.rest.util.LabMapper;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Time;
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -81,8 +83,29 @@ public class UserController {
     @GetMapping("/doctor")
     public ResponseEntity<?> getDoctor() {
         int i = 2;
-        long l=i;
+        long l = i;
         return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(userService.getDoctor(l)));
+    }
+
+    @PatchMapping("/changes/{id}")
+    public ResponseEntity<?> changeRoleUser(@RequestBody User user, @PathVariable("id") Long id) {
+        int i = 2;
+        long l = i;
+        User userId = userService.getUser(id);
+        Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
+        Authority authDoctor = Authority.builder().name(AuthorityName.ROLE_DOCTOR).build();
+        if(userId.getAuthorities().get(0).getName().equals(AuthorityName.ROLE_DOCTOR)) {
+            userId.getAuthorities().add(authUser);
+            User change = userService.updateRole(userId);
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(change));
+
+        }else if (userId.getAuthorities().get(0).getName().equals(AuthorityName.ROLE_USER)){
+            return ResponseEntity.ok("user");
+        }
+        return ResponseEntity.ok("No data");
+    }
+
+
     @GetMapping("datas")
     public ResponseEntity<?> getUserLists(HttpServletRequest request, @RequestParam(value = "_limit", required = false) Integer perPage
             , @RequestParam(value = "_page", required = false) Integer page, @RequestParam(value = "title", required = false) String title) {

@@ -30,6 +30,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User updateRole(User user) {
+        return userDao.updateRole(user);
+    }
+
+    @Override
     public Page<UserVaccine> getUserVaccines(Integer pageSize, Integer page) {
         return userVaccineDao.getUserVaccines(pageSize, page);
     }
@@ -59,6 +64,7 @@ public class UserServiceImpl implements UserService{
     public Page<UserVaccine> getUserVaccines(String title, Pageable pageable) {
         return userVaccineDao.getUserVaccine(title,pageable);
     }
+
 
     @Override
     public Page<User> getUsersForDoctor(Long id, Pageable pageable) {

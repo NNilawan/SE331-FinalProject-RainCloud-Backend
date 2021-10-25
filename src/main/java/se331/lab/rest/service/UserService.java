@@ -10,14 +10,13 @@ import java.util.List;
 
 public interface UserService {
     User getUser(Long id);
+    User updateRole(User user);
     List<User> getAllUserVaccine();
-//    List<UserVaccine> getAllUserVaccine();
     Page<UserVaccine> getUserVaccines(Integer pageSize, Integer page);
     UserVaccine getUserVaccine(Long id);
     List<User> getDoctor(Long id);
     UserVaccine save(UserVaccine userVaccine);
     Page<UserVaccine> getUserVaccines(String title, Pageable pageable);
-
     Page<User> getUsersForDoctor(Long id, Pageable pageable);
     Page<User> getUsersForDoctor(Long id, String title, Pageable pageable);
 
