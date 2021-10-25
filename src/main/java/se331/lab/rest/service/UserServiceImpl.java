@@ -59,4 +59,25 @@ public class UserServiceImpl implements UserService{
     public Page<UserVaccine> getUserVaccines(String title, Pageable pageable) {
         return userVaccineDao.getUserVaccine(title,pageable);
     }
+
+    @Override
+    public Page<User> getUsersForDoctor(Long id, Pageable pageable) {
+        return userDao.getUsersForDoctor(id, pageable);
+    }
+
+    @Override
+    public Page<User> getUsersForDoctor(Long id, String title, Pageable pageable) {
+        return userDao.getUsersForDoctor(id, title,pageable);
+    }
+
+    @Override
+    public Page<User> getUsers(Integer pageSize, Integer page) {
+        return userDao.getUsers(pageSize, page);
+    }
+
+    @Override
+    public Page<User> getUsers(String title, Pageable pageable) {
+        return userDao.getUsers(title,pageable);
+    }
+
 }

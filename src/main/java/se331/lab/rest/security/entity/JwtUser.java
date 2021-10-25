@@ -18,7 +18,7 @@ public class JwtUser implements UserDetails {
     private final String firstname;
     private final String lastname;
     private final String password;
-    private final LocalDate birthDate;
+    private final String birthDate;
     private final String hometown;
     private final String picture;
     //    private final String email;
@@ -31,7 +31,7 @@ public class JwtUser implements UserDetails {
             String username,
             String firstname,
             String lastname,
-            LocalDate birthDate,
+            String birthDate,
             String hometown,
             String picture,
 //            String email,
@@ -89,7 +89,7 @@ public class JwtUser implements UserDetails {
         return lastname;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 

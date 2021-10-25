@@ -18,7 +18,7 @@ public class UserDTO {
 //    String password;
     String firstname;
     String lastname;
-    LocalDate birthDate;
+    String birthDate;
     String hometown;
     String picture;
 //    String email;

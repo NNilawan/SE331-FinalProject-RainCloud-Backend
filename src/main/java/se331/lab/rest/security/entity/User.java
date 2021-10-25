@@ -48,13 +48,13 @@ public class User {
 
     @Column(name = "BIRTHDATE", length = 50)
     @NotNull
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Column(name = "HOMETOWN", length = 150)
     @NotNull
     private String hometown;
 
-    @Column(name = "PICTURE", length = 150)
+    @Column(name = "PICTURE", length = 500)
     @NotNull
     private String picture;
 

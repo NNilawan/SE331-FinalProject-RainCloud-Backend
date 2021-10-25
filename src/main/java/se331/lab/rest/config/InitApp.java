@@ -45,11 +45,11 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         addUser();
         Vaccine vaccine1, vaccine2, vaccine3;
         vaccine1 = vaccineRepository.save(Vaccine.builder()
-                .name("pFizer").picture("Vaccine1").build());
+                .name("pFizer").picture("https://cmu.to/zaLqE").build());
         vaccine2 = vaccineRepository.save(Vaccine.builder()
-                .name("Moderna").picture("Vaccine2").build());
+                .name("Moderna").picture("https://cmu.to/DuEEl").build());
         vaccine3 = vaccineRepository.save(Vaccine.builder()
-                .name("AstraZeneca").picture("Vaccine3").build());
+                .name("AstraZeneca").picture("https://cmu.to/gWiyN").build());
 
         // Initial UserVaccine
         UserVaccine tempUserVaccine;
@@ -152,9 +152,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("admin"))
                 .firstname("adminFN")
                 .lastname("adminLN")
-                .birthDate(LocalDate.of(1991,01,1))
+                .birthDate("1991-01-01")
                 .hometown("Chiang Mai")
-                .picture("Picture1")
+                .picture("https://cmu.to/Fwpot")
 //                .email("admin@admin.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -165,9 +165,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("doctor"))
                 .firstname("doctorFN")
                 .lastname("doctorLN")
-                .birthDate(LocalDate.of(1992,02,2))
+                .birthDate("1992-02-02")
                 .hometown("Chiang Dao")
-                .picture("Picture2")
+                .picture("https://cmu.to/GcNCs")
 //                .email("disableUser@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -178,9 +178,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("doctor2"))
                 .firstname("doctor2FN")
                 .lastname("doctor2LN")
-                .birthDate(LocalDate.of(1992,03,3))
+                .birthDate("1993-03-03")
                 .hometown("Chiang Rung")
-                .picture("Picture3")
+                .picture("https://cmu.to/mOcqn")
 //                .email("disableUser@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -191,9 +191,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("user"))
                 .firstname("userFN")
                 .lastname("userLN")
-                .birthDate(LocalDate.of(1993,10,10))
+                .birthDate("1993-10-10")
                 .hometown("Chiang Rai")
-                .picture("Picture4")
+                .picture("https://cmu.to/KTdEj")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -204,9 +204,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("user2"))
                 .firstname("user2FN")
                 .lastname("user2LN")
-                .birthDate(LocalDate.of(1994,11,11))
+                .birthDate("1994-11-11")
                 .hometown("Chiang Khan")
-                .picture("Picture5")
+                .picture("https://cmu.to/OtnPW")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -217,9 +217,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("user3"))
                 .firstname("user3FN")
                 .lastname("user3LN")
-                .birthDate(LocalDate.of(1994,12,12))
+                .birthDate("1994-12-12")
                 .hometown("Chiang Mhun")
-                .picture("Picture6")
+                .picture("https://cmu.to/h0ZFY")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))

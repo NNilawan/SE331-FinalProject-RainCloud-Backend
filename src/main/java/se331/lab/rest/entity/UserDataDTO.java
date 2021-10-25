@@ -16,7 +16,7 @@ public class UserDataDTO {
     String username;
     String firstname;
     String lastname;
-    LocalDate birthDate;
+    String birthDate;
     String hometown;
     String picture;
 }
