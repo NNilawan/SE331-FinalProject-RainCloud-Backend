@@ -45,11 +45,11 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         addUser();
         Vaccine vaccine1, vaccine2, vaccine3;
         vaccine1 = vaccineRepository.save(Vaccine.builder()
-                .name("pFizer").picture("Vaccine1").build());
+                .name("pFizer").picture("https://cmu.to/zaLqE").build());
         vaccine2 = vaccineRepository.save(Vaccine.builder()
-                .name("Moderna").picture("Vaccine2").build());
+                .name("Moderna").picture("https://cmu.to/DuEEl").build());
         vaccine3 = vaccineRepository.save(Vaccine.builder()
-                .name("AstraZeneca").picture("Vaccine3").build());
+                .name("AstraZeneca").picture("https://cmu.to/gWiyN").build());
 
         // Initial UserVaccine
         UserVaccine tempUserVaccine;
@@ -154,7 +154,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("adminLN")
                 .birthDate("1991-01-01")
                 .hometown("Chiang Mai")
-                .picture("Picture1")
+                .picture("https://cmu.to/Fwpot")
 //                .email("admin@admin.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -167,7 +167,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("doctorLN")
                 .birthDate("1992-02-02")
                 .hometown("Chiang Dao")
-                .picture("Picture2")
+                .picture("https://cmu.to/GcNCs")
 //                .email("disableUser@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -180,7 +180,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("doctor2LN")
                 .birthDate("1993-03-03")
                 .hometown("Chiang Rung")
-                .picture("Picture3")
+                .picture("https://cmu.to/mOcqn")
 //                .email("disableUser@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -193,7 +193,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("userLN")
                 .birthDate("1993-10-10")
                 .hometown("Chiang Rai")
-                .picture("Picture4")
+                .picture("https://cmu.to/KTdEj")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -206,7 +206,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("user2LN")
                 .birthDate("1994-11-11")
                 .hometown("Chiang Khan")
-                .picture("Picture5")
+                .picture("https://cmu.to/OtnPW")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -219,7 +219,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("user3LN")
                 .birthDate("1994-12-12")
                 .hometown("Chiang Mhun")
-                .picture("Picture6")
+                .picture("https://cmu.to/h0ZFY")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
