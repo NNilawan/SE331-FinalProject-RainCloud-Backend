@@ -70,8 +70,8 @@ public class UserController {
         }
     }
 
-    @PostMapping("/admin")
-    public ResponseEntity<?> addVaccinetoUser(HttpServletRequest request, @RequestBody UserVaccine userVaccine, @PathVariable("id") Long id) {
+    @PostMapping("/admin/{id}")
+    public ResponseEntity<?> addVaccinetoUser(@PathVariable("id") Long id, @RequestBody UserVaccine userVaccine) {
         User patient = userService.getUser(id);
         userVaccine.setPatient(patient);
         UserVaccine output = userService.save(userVaccine);
