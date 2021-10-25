@@ -5,8 +5,10 @@ import org.springframework.data.domain.Pageable;
 import se331.lab.rest.entity.UserVaccine;
 import se331.lab.rest.security.entity.User;
 
+import java.util.List;
+
 public interface UserDao {
     User getUser(Long id);
     Page<User> getUser(Pageable pageRequest);
-    Page<User> getDoctor(Long id);
+    List<User> getDoctor(Long id);
 }

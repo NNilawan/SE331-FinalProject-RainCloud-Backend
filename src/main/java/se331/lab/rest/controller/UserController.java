@@ -81,8 +81,7 @@ public class UserController {
     @GetMapping("/doctor")
     public ResponseEntity<?> getDoctor() {
         int i = 2;
-        Long l = Long.valueOf(i);
-        User doctor = userService.getDoctor(l);
-        return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(doctor));
+        long l=i;
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(userService.getDoctor(l)));
     }
 }

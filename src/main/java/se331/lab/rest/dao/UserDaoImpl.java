@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.UserRepository;
 
+import java.util.List;
+
 @Repository
 public class UserDaoImpl implements UserDao{
     @Autowired
@@ -23,7 +25,7 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public Page<User> getDoctor(Long id) {
+    public List<User> getDoctor(Long id) {
         return userRepository.findByAuthorities_id(id);
     }
 

@@ -7,9 +7,7 @@ import org.springframework.stereotype.Service;
 import se331.lab.rest.dao.UserDao;
 import se331.lab.rest.dao.UserVaccineDao;
 import se331.lab.rest.dao.VaccineDao;
-import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.entity.UserVaccine;
-import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.security.entity.User;
 
 import javax.transaction.Transactional;
@@ -42,7 +40,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Page<User> getDoctor(Long id) {
+    public List<User> getDoctor(Long id) {
         return userDao.getDoctor(id);
     }
 
