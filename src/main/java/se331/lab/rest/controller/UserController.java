@@ -17,6 +17,7 @@ import se331.lab.rest.security.JwtTokenUtil;
 import se331.lab.rest.security.entity.Authority;
 import se331.lab.rest.security.entity.AuthorityName;
 import se331.lab.rest.security.entity.User;
+import se331.lab.rest.security.repository.AuthorityRepository;
 import se331.lab.rest.security.repository.UserRepository;
 import se331.lab.rest.service.UserService;
 import se331.lab.rest.service.VaccineService;
@@ -40,6 +41,9 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    AuthorityRepository authorityRepository;
 
     @Autowired
     VaccineRepository vaccineRepository;
@@ -89,18 +93,22 @@ public class UserController {
 
     @PatchMapping("/changes/{id}")
     public ResponseEntity<?> changeRoleUser(@RequestBody User user, @PathVariable("id") Long id) {
-        int i = 2;
-        long l = i;
+//        int i = 2;
+//        long l = i;
         User userId = userService.getUser(id);
-        Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
-        Authority authDoctor = Authority.builder().name(AuthorityName.ROLE_DOCTOR).build();
+        Authority authUser = authorityRepository.findByName(AuthorityName.ROLE_USER);
+        Authority authDoctor = authorityRepository.findByName(AuthorityName.ROLE_DOCTOR);
         if(userId.getAuthorities().get(0).getName().equals(AuthorityName.ROLE_DOCTOR)) {
+            userId.getAuthorities().clear();
             userId.getAuthorities().add(authUser);
             User change = userService.updateRole(userId);
-            return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(change));
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(change));
 
         }else if (userId.getAuthorities().get(0).getName().equals(AuthorityName.ROLE_USER)){
-            return ResponseEntity.ok("user");
+            userId.getAuthorities().clear();
+            userId.getAuthorities().add(authDoctor);
+            User change = userService.updateRole(userId);
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(change));
         }
         return ResponseEntity.ok("No data");
     }
