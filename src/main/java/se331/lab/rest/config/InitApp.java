@@ -54,43 +54,139 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         // Initial UserVaccine
         UserVaccine tempUserVaccine;
 
-        // UserVaccine Set 1
+        // UserVaccine Doctor Set 1-1
         tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
-                .date(LocalDate.now().minusDays(1))
+                .date(LocalDate.now().plusDays(1))
                 .time(new Time(System.currentTimeMillis()))
-                .place("SuanDok")
+                .place("Rham Hospital")
                 .dose(1)
                 .build());
         tempUserVaccine.setVaccine(vaccine1);
         vaccine1.getVaccineHistory().add(tempUserVaccine);
 
-        tempUserVaccine.setDoctor(doctor);
-        doctor.getGiveVaccine().add(tempUserVaccine);
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
 
-        tempUserVaccine.setPatient(user);
-        user.getGotVaccine().add(tempUserVaccine);
+        tempUserVaccine.setPatient(user1);
+        user1.getGotVaccine().add(tempUserVaccine);
 
-        // UserVaccine Set 2-1
+        // UserVaccine Doctor Set 1-2
         tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
-                .date(LocalDate.now().minusDays(2))
+                .date(LocalDate.now().plusDays(2))
                 .time(new Time(System.currentTimeMillis()))
-                .place("Rham")
+                .place("Lanna Hospital")
                 .dose(1)
                 .build());
-        tempUserVaccine.setVaccine(vaccine2);
-        vaccine2.getVaccineHistory().add(tempUserVaccine);
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
 
-        tempUserVaccine.setDoctor(doctor);
-        doctor.getGiveVaccine().add(tempUserVaccine);
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
 
         tempUserVaccine.setPatient(user2);
         user2.getGotVaccine().add(tempUserVaccine);
 
-        // UserVaccine Set 2-2
+        // UserVaccine Doctor Set 1-3
         tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
-                .date(LocalDate.now().minusDays(3))
+                .date(LocalDate.now().plusDays(2))
                 .time(new Time(System.currentTimeMillis()))
-                .place("Rham")
+                .place("SuanDok Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user3);
+        user3.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 1-4
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(3))
+                .time(new Time(System.currentTimeMillis()))
+                .place("Rham Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user4);
+        user4.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 1-5
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(2))
+                .time(new Time(System.currentTimeMillis()))
+                .place("Bangkok Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user5);
+        user5.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 1-6
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(3))
+                .time(new Time(System.currentTimeMillis()))
+                .place("Rham Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user6);
+        user6.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 1-7
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(2))
+                .time(new Time(System.currentTimeMillis()))
+                .place("McCormick Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor1);
+        doctor1.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user7);
+        user7.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 2-1
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .place("Lanna Hospital")
+                .dose(2)
+                .build());
+        tempUserVaccine.setVaccine(vaccine2);
+        vaccine2.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor2);
+        doctor2.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user2);
+        user2.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 2-2
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .place("SuanDok Hospital")
                 .dose(2)
                 .build());
         tempUserVaccine.setVaccine(vaccine3);
@@ -99,49 +195,177 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempUserVaccine.setDoctor(doctor2);
         doctor2.getGiveVaccine().add(tempUserVaccine);
 
-        tempUserVaccine.setPatient(user2);
-        user2.getGotVaccine().add(tempUserVaccine);
+        tempUserVaccine.setPatient(user3);
+        user3.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 2-3
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .place("Bangkok Hospital")
+                .dose(1)
+                .build());
+        tempUserVaccine.setVaccine(vaccine2);
+        vaccine2.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor2);
+        doctor2.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user5);
+        user5.getGotVaccine().add(tempUserVaccine);
+
+        // UserVaccine Doctor Set 3-1
+        tempUserVaccine = userVaccineRepository.save(UserVaccine.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .place("McCormick Hospital")
+                .dose(2)
+                .build());
+        tempUserVaccine.setVaccine(vaccine1);
+        vaccine1.getVaccineHistory().add(tempUserVaccine);
+
+        tempUserVaccine.setDoctor(doctor3);
+        doctor3.getGiveVaccine().add(tempUserVaccine);
+
+        tempUserVaccine.setPatient(user7);
+        user7.getGotVaccine().add(tempUserVaccine);
 
         // Initial Comment
         Comment tempComment;
-        // Comment 1
+        // Comment 1-1
         tempComment = commentRepository.save(Comment.builder()
-                .date(LocalDate.now().minusDays(1))
+                .date(LocalDate.now().plusDays(1))
                 .time(new Time(System.currentTimeMillis()))
-                .comment("Comment1")
+                .comment("Comment: Good, No fever")
                 .build());
-        tempComment.setCommentBy(doctor);
-        doctor.getGiveComment().add(tempComment);
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
 
-        tempComment.setCommentTo(user);
-        user.getGotComment().add(tempComment);
+        tempComment.setCommentTo(user1);
+        user1.getGotComment().add(tempComment);
 
-        // Comment 2-1
+        // Comment 1-2
         tempComment = commentRepository.save(Comment.builder()
-                .date(LocalDate.now().minusDays(2))
+                .date(LocalDate.now().plusDays(2))
                 .time(new Time(System.currentTimeMillis()))
-                .comment("Comment2-1")
+                .comment("Comment: Quite Good, No Sore Throat")
                 .build());
-        tempComment.setCommentBy(doctor);
-        doctor.getGiveComment().add(tempComment);
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
 
         tempComment.setCommentTo(user2);
         user2.getGotComment().add(tempComment);
 
-        // Comment 2-2
+        // Comment 1-3
         tempComment = commentRepository.save(Comment.builder()
-                .date(LocalDate.now().minusDays(3))
+                .date(LocalDate.now().plusDays(2))
                 .time(new Time(System.currentTimeMillis()))
-                .comment("Comment2-2")
+                .comment("Comment: Very Healthy")
+                .build());
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user3);
+        user3.getGotComment().add(tempComment);
+
+        // Comment 1-4
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(3))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: High Blood Pressure")
+                .build());
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user4);
+        user4.getGotComment().add(tempComment);
+
+        // Comment 1-5
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(2))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: Have Fever")
+                .build());
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user5);
+        user5.getGotComment().add(tempComment);
+
+        // Comment 1-6
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(3))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: No problems")
+                .build());
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user6);
+        user6.getGotComment().add(tempComment);
+
+        // Comment 1-7
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(2))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: Runny Nose")
+                .build());
+        tempComment.setCommentBy(doctor1);
+        doctor1.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user7);
+        user7.getGotComment().add(tempComment);
+
+        // Comment 2-1
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: Getting Better")
                 .build());
         tempComment.setCommentBy(doctor2);
         doctor2.getGiveComment().add(tempComment);
 
         tempComment.setCommentTo(user2);
         user2.getGotComment().add(tempComment);
+
+        // Comment 2-2
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: Still Healthy")
+                .build());
+        tempComment.setCommentBy(doctor2);
+        doctor2.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user3);
+        user3.getGotComment().add(tempComment);
+
+        // Comment 2-3
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: No more Fever, No Allergic")
+                .build());
+        tempComment.setCommentBy(doctor2);
+        doctor2.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user5);
+        user5.getGotComment().add(tempComment);
+
+        // Comment 3-1
+        tempComment = commentRepository.save(Comment.builder()
+                .date(LocalDate.now().plusDays(30))
+                .time(new Time(System.currentTimeMillis()))
+                .comment("Comment: Getting Better, No Allergic")
+                .build());
+        tempComment.setCommentBy(doctor3);
+        doctor3.getGiveComment().add(tempComment);
+
+        tempComment.setCommentTo(user7);
+        user7.getGotComment().add(tempComment);
     }
 
-    User admin, doctor, doctor2, user, user2, user3;
+    User admin, doctor1, doctor2, doctor3, user1, user2, user3, user4, user5, user6, user7;
     private void addUser() {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         Authority authAdmin = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
@@ -160,11 +384,11 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
 
-        doctor = User.builder()
-                .username("doctor")
-                .password(encoder.encode("doctor"))
-                .firstname("doctorFN")
-                .lastname("doctorLN")
+        doctor1 = User.builder()
+                .username("doctor1")
+                .password(encoder.encode("doctor1"))
+                .firstname("doctor1FN")
+                .lastname("doctor1LN")
                 .birthDate("1992-02-02")
                 .hometown("Chiang Dao")
                 .picture("https://cmu.to/GcNCs")
@@ -186,12 +410,25 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
 
-        user = User.builder()
-                .username("user")
-                .password(encoder.encode("user"))
-                .firstname("userFN")
-                .lastname("userLN")
-                .birthDate("1993-10-10")
+        doctor3 = User.builder()
+                .username("doctor3")
+                .password(encoder.encode("doctor3"))
+                .firstname("doctor3FN")
+                .lastname("doctor3LN")
+                .birthDate("1993-04-04")
+                .hometown("Chiang Mai")
+                .picture("https://cmu.to/JQyud")
+//                .email("disableUser@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user1 = User.builder()
+                .username("user1")
+                .password(encoder.encode("user1"))
+                .firstname("user1FN")
+                .lastname("user1LN")
+                .birthDate("1993-10-01")
                 .hometown("Chiang Rai")
                 .picture("https://cmu.to/KTdEj")
 //                .email("enabled@user.com")
@@ -204,7 +441,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("user2"))
                 .firstname("user2FN")
                 .lastname("user2LN")
-                .birthDate("1994-11-11")
+                .birthDate("1994-10-02")
                 .hometown("Chiang Khan")
                 .picture("https://cmu.to/OtnPW")
 //                .email("enabled@user.com")
@@ -217,9 +454,61 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .password(encoder.encode("user3"))
                 .firstname("user3FN")
                 .lastname("user3LN")
-                .birthDate("1994-12-12")
+                .birthDate("1994-10-03")
                 .hometown("Chiang Mhun")
                 .picture("https://cmu.to/h0ZFY")
+//                .email("enabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user4 = User.builder()
+                .username("user4")
+                .password(encoder.encode("user4"))
+                .firstname("user4FN")
+                .lastname("user4LN")
+                .birthDate("1994-10-04")
+                .hometown("Tak")
+                .picture("https://cmu.to/52-Gd")
+//                .email("enabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user5 = User.builder()
+                .username("user5")
+                .password(encoder.encode("user5"))
+                .firstname("user5FN")
+                .lastname("user5LN")
+                .birthDate("1994-10-05")
+                .hometown("Phichit")
+                .picture("https://cmu.to/-gRA1")
+//                .email("enabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user6 = User.builder()
+                .username("user6")
+                .password(encoder.encode("user6"))
+                .firstname("user6FN")
+                .lastname("user6LN")
+                .birthDate("1994-10-06")
+                .hometown("Phayao")
+                .picture("https://cmu.to/4qXr1")
+//                .email("enabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user7 = User.builder()
+                .username("user7")
+                .password(encoder.encode("user7"))
+                .firstname("user7FN")
+                .lastname("user7LN")
+                .birthDate("1994-10-07")
+                .hometown("Ratchaburi")
+                .picture("https://cmu.to/WR3hF")
 //                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -230,18 +519,31 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         authorityRepository.save(authUser);
         admin.getAuthorities().add(authAdmin);
 //        admin.getAuthorities().add(authUser);
-        doctor.getAuthorities().add(authDoctor);
+        doctor1.getAuthorities().add(authDoctor);
 //        doctor.getAuthorities().add(authUser);
         doctor2.getAuthorities().add(authDoctor);
 //        doctor2.getAuthorities().add(authUser);
-        user.getAuthorities().add(authUser);
+        doctor3.getAuthorities().add(authDoctor);
+//        doctor3.getAuthorities().add(authUser);
+
+        user1.getAuthorities().add(authUser);
         user2.getAuthorities().add(authUser);
         user3.getAuthorities().add(authUser);
+        user4.getAuthorities().add(authUser);
+        user5.getAuthorities().add(authUser);
+        user6.getAuthorities().add(authUser);
+        user7.getAuthorities().add(authUser);
+
         userRepository.save(admin);
-        userRepository.save(doctor);
+        userRepository.save(doctor1);
         userRepository.save(doctor2);
-        userRepository.save(user);
+        userRepository.save(doctor3);
+        userRepository.save(user1);
         userRepository.save(user2);
         userRepository.save(user3);
+        userRepository.save(user4);
+        userRepository.save(user5);
+        userRepository.save(user6);
+        userRepository.save(user7);
     }
 }
