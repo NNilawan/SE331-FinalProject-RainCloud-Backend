@@ -91,7 +91,7 @@ public class UserController {
         return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(userService.getDoctor(l)));
     }
 
-    @PatchMapping("/changes/{id}")
+    @PostMapping("/changes/{id}")
     public ResponseEntity<?> changeRoleUser(@PathVariable("id") Long id) {
         User userId = userService.getUser(id);
         Authority authUser = authorityRepository.findByName(AuthorityName.ROLE_USER);
