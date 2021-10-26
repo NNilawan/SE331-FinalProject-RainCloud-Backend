@@ -92,9 +92,7 @@ public class UserController {
     }
 
     @PatchMapping("/changes/{id}")
-    public ResponseEntity<?> changeRoleUser(@RequestBody User user, @PathVariable("id") Long id) {
-//        int i = 2;
-//        long l = i;
+    public ResponseEntity<?> changeRoleUser(@PathVariable("id") Long id) {
         User userId = userService.getUser(id);
         Authority authUser = authorityRepository.findByName(AuthorityName.ROLE_USER);
         Authority authDoctor = authorityRepository.findByName(AuthorityName.ROLE_DOCTOR);
@@ -103,7 +101,6 @@ public class UserController {
             userId.getAuthorities().add(authUser);
             User change = userService.updateRole(userId);
             return ResponseEntity.ok(LabMapper.INSTANCE.getUserAuthDTO(change));
-
         }else if (userId.getAuthorities().get(0).getName().equals(AuthorityName.ROLE_USER)){
             userId.getAuthorities().clear();
             userId.getAuthorities().add(authDoctor);
