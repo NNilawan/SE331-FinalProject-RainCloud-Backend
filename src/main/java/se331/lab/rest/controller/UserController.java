@@ -70,7 +70,7 @@ public class UserController {
     public ResponseEntity<?> getUserDetails(@PathVariable("id") Long id) {
         User output = userService.getUser(id);
         if (output != null) {
-            return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(output));
+            return ResponseEntity.ok(LabMapper.INSTANCE.getUserDetailDTO(output));
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The given id is not found");
         }
