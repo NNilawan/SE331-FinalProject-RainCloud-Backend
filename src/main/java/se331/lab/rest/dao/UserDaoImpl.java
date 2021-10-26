@@ -27,12 +27,12 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public Page<User> getUsersForDoctor(Long id, Pageable page) {
-        return userRepository.findByGotVaccine_doctorId(id, page);
+        return userRepository.findDistinctByGotVaccine_doctorId(id, page);
     }
 
     @Override
     public Page<User> getUsersForDoctor(Long id, String name, Pageable page) {
-        return userRepository.findByGotVaccine_doctorIdAndFirstnameIgnoreCaseContainingOrGotVaccine_doctorIdAndLastnameIgnoreCaseContaining(id, name,id,name,page);
+        return userRepository.findDistinctByGotVaccine_doctorIdAndFirstnameIgnoreCaseContainingOrGotVaccine_doctorIdAndLastnameIgnoreCaseContaining(id, name,id,name,page);
     }
 
     @Override
